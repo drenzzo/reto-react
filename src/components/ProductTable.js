@@ -24,19 +24,21 @@ const ProductTable = () => {
   const filteredProductCount = filteredProducts.length;
 
   return (
-    <div className="product-table-main">
-      <SearchInput onChange={handleSearch} />
-      <button className="add-button" onClick={handleAddProduct}>
-        Agregar
-      </button>
+    <div className="product-table-container">
+      <div>
+        <SearchInput onChange={handleSearch} />
+        <button className="add-button" onClick={handleAddProduct}>
+          Agregar
+        </button>
+      </div>
       <table className="product-table">
         <thead>
           <tr>
             <th>Imagen</th>
             <th>Nombre del producto</th>
             <th>Descripción</th>
-            <th>Fecha de lanzamiento</th>
-            <th>Fecha de finalización</th>
+            <th>Fecha de liberación</th>
+            <th>Fecha de reestructuración</th>
           </tr>
         </thead>
         <tbody>

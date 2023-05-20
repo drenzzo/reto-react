@@ -1,10 +1,31 @@
-.product-table {
-  /* Estilos de la tabla */
+.product-table-container {
+  background: #FFFFFF;
+  padding: 20px;
+  overflow-x: hidden;
 }
 
-.product-table-main > div {
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+}
+
+.product-table th {
+  text-align: left;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ccc;
+  background: #f9fafc;
+}
+
+.product-table td {
+  text-align: left;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.product-table-container > div {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
 
