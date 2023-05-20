@@ -1,0 +1,72 @@
+[
+  {
+    "imagen": "imagen1.jpg",
+    "nombre": "Producto 1",
+    "descripcion": "Descripción del Producto 1",
+    "fechaLanzamiento": "2023-01-01",
+    "fechaFinalizacion": "2023-02-01"
+  },
+  {
+    "imagen": "imagen1.jpg",
+    "nombre": "Producto 2",
+    "descripcion": "Descripción del Producto 1",
+    "fechaLanzamiento": "2023-01-01",
+    "fechaFinalizacion": "2023-02-01"
+  },
+  {
+    "imagen": "imagen1.jpg",
+    "nombre": "Producto 3",
+    "descripcion": "Descripción del Producto 1",
+    "fechaLanzamiento": "2023-01-01",
+    "fechaFinalizacion": "2023-02-01"
+  },
+  {
+    "imagen": "imagen1.jpg",
+    "nombre": "Producto 4",
+    "descripcion": "Descripción del Producto 1",
+    "fechaLanzamiento": "2023-01-01",
+    "fechaFinalizacion": "2023-02-01"
+  },
+  {
+    "imagen": "imagen1.jpg",
+    "nombre": "Producto 5",
+    "descripcion": "Descripción del Producto 1",
+    "fechaLanzamiento": "2023-01-01",
+    "fechaFinalizacion": "2023-02-01"
+  },
+  {
+    "imagen": "imagen1.jpg",
+    "nombre": "Producto 6",
+    "descripcion": "Descripción del Producto 1",
+    "fechaLanzamiento": "2023-01-01",
+    "fechaFinalizacion": "2023-02-01"
+  },
+  {
+    "imagen": "imagen1.jpg",
+    "nombre": "Producto 7",
+    "descripcion": "Descripción del Producto 1",
+    "fechaLanzamiento": "2023-01-01",
+    "fechaFinalizacion": "2023-02-01"
+  },
+  {
+    "imagen": "imagen1.jpg",
+    "nombre": "Producto 8",
+    "descripcion": "Descripción del Producto 1",
+    "fechaLanzamiento": "2023-01-01",
+    "fechaFinalizacion": "2023-02-01"
+  },
+  {
+    "imagen": "imagen1.jpg",
+    "nombre": "Producto 9",
+    "descripcion": "Descripción del Producto 1",
+    "fechaLanzamiento": "2023-01-01",
+    "fechaFinalizacion": "2023-02-01"
+  },
+  {
+    "imagen": "imagen1.jpg",
+    "nombre": "Producto 10",
+    "descripcion": "Descripción del Producto 1",
+    "fechaLanzamiento": "2023-01-01",
+    "fechaFinalizacion": "2023-02-01"
+  }
+]

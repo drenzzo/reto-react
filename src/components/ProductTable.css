@@ -1,0 +1,22 @@
+.product-table {
+  /* Estilos de la tabla */
+}
+
+.product-table-main > div {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.product-table input {
+  width: 200px;
+  padding: 5px;
+}
+
+.product-table p {
+  margin: 0;
+}
+
+.add-button {
+  margin-right: 10px;
+}
