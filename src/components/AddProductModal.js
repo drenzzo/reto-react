@@ -3,8 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import './AddProductModal.css';
 
-const AddProductModal = ({ isOpen, onClose }) => {
-
+const AddProductModal = ({ isOpen, onClose, onSubmit, onSubmitProduct }) => {
 
   const [id, setId] = useState("");
   const [nombre, setNombre] = useState("");
@@ -30,7 +29,7 @@ const AddProductModal = ({ isOpen, onClose }) => {
 
   const validateId = (id) => {
     const isValidLength = id.length >= 3 && id.length <= 10;
-    const isValidFormat = /^[a-zA-Z0-9]+$/.test(id);
+    const isValidFormat = /^[a-zA-Z]{3}-[a-zA-Z]{1,6}$/.test(id);
 
     return isValidLength && isValidFormat;
   };
@@ -49,7 +48,7 @@ const AddProductModal = ({ isOpen, onClose }) => {
       if (!isValid) {
         setErrors((prevErrors) => ({
           ...prevErrors,
-          id: "Id no válido!"
+          id: "Id no válido!. El formato es incorrecto"
         }));
       } else {
         setErrors((prevErrors) => ({
@@ -70,8 +69,7 @@ const AddProductModal = ({ isOpen, onClose }) => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
     // Simulación de validación de ID
-    // retorna un ID válido, es decir un id q no existe en la base de datos
-    return id === "1"; // Cambia "existingId" por el ID que deseas utilizar para probar la validación
+    return id === "trj-testpe"; // Cambia "existingId" por el ID que deseas utilizar para probar la validación
   };
 
   const handleFechaLibChange = (date) => {
@@ -113,7 +111,7 @@ const AddProductModal = ({ isOpen, onClose }) => {
 
   const handleImagenChange = (event) => {
     // setImagen(event.target.value);
-    setImagen("https://www.visa.com.ec/dam/VCOM/regional/lac/SPA/Default/Pay%20With%20Visa/Tarjetas/visa-signature-400x255.jpg");
+    setImagen("https://static.mercadonegro.pe/wp-content/uploads/2021/04/19163930/yape-1.jpg");
   };
 
   const handleCancel = () => {
@@ -137,7 +135,7 @@ const AddProductModal = ({ isOpen, onClose }) => {
     if (!id) {
       newErrors.id = "Este campo es requerido!";
     } else if(!validateId(id)){
-      newErrors.id = "Id no válido!";
+      newErrors.id = "Id no válido. El formato es incorrecto!";
     }
     if (!nombre) {
       newErrors.nombre = "Este campo es requerido!";
@@ -169,7 +167,11 @@ const AddProductModal = ({ isOpen, onClose }) => {
       setFechaRes("");
       setErrors({});
     }
-    // onClose();
+
+    // Llamar a la función onAddProduct para agregar el nuevo producto
+    onSubmitProduct(newProduct);
+
+    onClose();
   };
 
   const createNewProduct = async (newProduct) => {
@@ -185,7 +187,7 @@ const AddProductModal = ({ isOpen, onClose }) => {
       });
       const data = await response.json();
       console.log(data);
-      // onSubmit(data);
+      onSubmit(data);
     } catch (error) {
       console.log(error);
     }
@@ -280,8 +282,12 @@ const AddProductModal = ({ isOpen, onClose }) => {
 
           {/* Otros campos del formulario */}
           <div className="modal-buttons">
-            <button type="button" onClick={handleCancel}>Cancelar</button>
-            <button type="submit" disabled={isSubmitDisabled}>Enviar</button>
+            <button
+              type="button"
+              onClick={handleCancel}>Cancelar</button>
+            <button
+              type="submit"
+              disabled={isSubmitDisabled}>Enviar</button>
           </div>
         </form>
       </div>

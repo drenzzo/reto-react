@@ -9,7 +9,7 @@ const formatDate = (date) => {
   return `${day}/${month}/${year}`;
 };
 
-const ProductRow = ({ product }) => {
+const ProductRow = ({ product, onDelete }) => {
   return (
     <tr>
       <td>
@@ -19,7 +19,7 @@ const ProductRow = ({ product }) => {
       <td>{product.description}</td>
       <td>{formatDate(new Date(product.date_release))}</td>
       <td>{formatDate(new Date(product.date_revision))}</td>
-      <td><ProductActions productId={product.id} /></td>
+      <td><ProductActions productId={product.id} onDelete={onDelete} /></td>
 
     </tr>
   );

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './ProductTable.css';
-// import products from '../data/products.json';
 import ProductRow from './ProductRow';
 import SearchInput from './SearchInput';
 import AddProductModal from './AddProductModal';
@@ -30,13 +29,16 @@ const ProductTable = () => {
     });
   }, []);
 
+  const handleSubmit = (newProduct) => {
+    // Agregar el nuevo producto a la lista
+    setProductsList([...productsList, newProduct]);
+  };
+
 
   const handleDeleteProduct = (productId) => {
     const newProductsList = productsList.filter((product) => product.id !== productId);
     setProductsList(newProductsList);
   };
-
-
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -56,7 +58,9 @@ const ProductTable = () => {
     <div className="product-table-container">
       <div>
         <SearchInput onChange={handleSearch} />
-        <button className="add-button" onClick={handleAddProduct}>
+        <button
+          className="add-button"
+          onClick={handleAddProduct}>
           Agregar
         </button>
       </div>
@@ -73,12 +77,18 @@ const ProductTable = () => {
         </thead>
         <tbody>
           {filteredProducts.map((product, index) => (
-            <ProductRow key={index} product={product} onDelete={handleDeleteProduct} />
+            <ProductRow
+              key={index}
+              product={product}
+              onDelete={handleDeleteProduct} />
           ))}
         </tbody>
       </table>
       <p className="filtered-count">{filteredProductCount} Resultados</p>
-      <AddProductModal isOpen={isModalOpen} onClose={() => setModalOpen(false)} />
+      <AddProductModal
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        onSubmitProduct={handleSubmit} />
     </div>
   );
 };
