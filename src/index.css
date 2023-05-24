@@ -1,10 +1,10 @@
 body {
   margin: 0;
   font-family: -apple-system, Arial, Helvetica, sans-serif, 'Apple Color Emoji';
-  font-size: 12px;
+  font-size: 11px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #f4f6f9;
+  background: #FFFFFF;
 }
 
 code {
